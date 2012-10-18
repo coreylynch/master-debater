@@ -9,7 +9,6 @@ emoticon-counting script taken from: http://bit.ly/K2iW7l
 
 import re
 import tweetstream
-import editdist
 import redis
 from spelling_corrector import correct
 import string
