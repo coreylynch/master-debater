@@ -1,3 +1,8 @@
+Distant Supervision for tweet sentiment classification
+
+Stores freqdists of word counts for tweets 'noisily labeled' with emoticons.
+
+
 To Run:
 
 1. redis-server
