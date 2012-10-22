@@ -37,7 +37,7 @@ if __name__=='__main__':
 							if any([i in ['obama','barack'] for i in no_punct.split()]):
 								obama_count+=1
 								print no_punct
-							print 'Obama: %s, Romney: %s' % (str(obama_count), str(romney_count))
+							print 'Obama: %d, Romney: %d' % (obama_count, romney_count)
 				except UnicodeEncodeError:
 					pass	
 
