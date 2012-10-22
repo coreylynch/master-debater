@@ -41,9 +41,9 @@ if __name__=='__main__':
 						#print no_punct
 						val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
 						if val<-2 or val>2:
-							if any([i.lower() in ['romney','mitt'] for i in no_punct.split()]):
+							if any([i in ['romney','mitt'] for i in no_punct.split()]):
 								romney+=1
-							if any([i.lower() in ['romney','mitt'] for i in no_punct.split()]):
+							if any([i in ['romney','mitt'] for i in no_punct.split()]):
 								obama+=1
 							print no_punct
 							print val
