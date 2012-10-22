@@ -5,11 +5,8 @@ Date: 10/21/12
 python afinn_classifier.py username pass
 '''
 
-import re
 import tweetstream
-from spelling_corrector import correct
 import string
-import csv
 import sys
 
 def normalize(s):
