@@ -37,7 +37,7 @@ if __name__=='__main__':
 						if val<-2 or val>2:
 							if any([i in ['romney','mitt'] for i in no_punct.split()]):
 								romney_count+=1
-							if any([i in ['romney','mitt'] for i in no_punct.split()]):
+							if any([i in ['obama','barack'] for i in no_punct.split()]):
 								obama_count+=1
 							print no_punct
 							print 
