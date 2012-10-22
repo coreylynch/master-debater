@@ -33,15 +33,12 @@ if __name__=='__main__':
 			if 'text' in tweet.keys() and len(tweet['text'])>0:
 				try:
 					no_punct = normalize(tweet['text'])
-					if no_punct!=None:
-						if True: #all(is_english_word(word) for word in no_punct.split()):
-							if any([i.lower() in queries for i in no_punct.split()]):
-								#print no_punct
-								val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
-								if val<-2 or val>2:
-
-									print no_punct
-									print val
+					if no_punct!=None and any([i.lower() in queries for i in no_punct.split()]):
+						#print no_punct
+						val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
+						if val<-2 or val>2:
+							print no_punct
+							print val
 				except UnicodeEncodeError:
 					pass	
 
