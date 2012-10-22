@@ -42,11 +42,11 @@ if __name__=='__main__':
 						val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
 						if val<-2 or val>2:
 							if any([i in ['romney','mitt'] for i in no_punct.split()]):
-								romney+=1
+								romney_count+=1
 							if any([i in ['romney','mitt'] for i in no_punct.split()]):
-								obama+=1
+								obama_count+=1
 							print no_punct
-							print val
+							print 
 				except UnicodeEncodeError:
 					pass	
 
