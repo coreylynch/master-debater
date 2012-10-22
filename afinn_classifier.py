@@ -15,9 +15,6 @@ def normalize(s):
 		ret = ret.replace(p, '')
 	return ret
 
-with open('wordsEn.txt') as word_file:
-	english_words = set(word.strip().lower() for word in word_file)
-
 def is_english_word(word):
 	return word.lower() in english_words
 
@@ -32,15 +29,13 @@ if __name__=='__main__':
 				try:
 					no_punct = normalize(tweet['text'])
 					if no_punct!=None:
-						#print no_punct
 						val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
 						if val<-2 or val>2:
 							if any([i in ['romney','mitt'] for i in no_punct.split()]):
 								romney_count+=1
 							if any([i in ['obama','barack'] for i in no_punct.split()]):
 								obama_count+=1
-							print no_punct
-							print 
+							print 'Obama: , Romney: ' % (str(obama_count), str(romney_count))
 				except UnicodeEncodeError:
 					pass	
 
