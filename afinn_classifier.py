@@ -27,7 +27,7 @@ with open('debate_queries.txt') as f:
 if __name__=='__main__':
 	romney_count = 0
 	obama_count = 0
-	with tweetstream.SampleStream('jerilynch','gracie') as stream:
+	with tweetstream.SampleStream('username','password') as stream:
 		for tweet in stream:
 			if 'text' in tweet.keys() and len(tweet['text'])>0:
 				try:
