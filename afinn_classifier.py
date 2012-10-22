@@ -23,12 +23,6 @@ def is_english_word(word):
 
 afinn = dict(map(lambda (k,v): (k,int(v)),[ line.split('\t') for line in open("AFINN/AFINN-111.txt") ]))
 
-
-
-with open('debate_queries.txt') as f:
-	queries = [i.strip() for i in f.readlines()]
-
-
 if __name__=='__main__':
 	romney_count = 0
 	obama_count = 0
@@ -37,7 +31,7 @@ if __name__=='__main__':
 			if 'text' in tweet.keys() and len(tweet['text'])>0:
 				try:
 					no_punct = normalize(tweet['text'])
-					if no_punct!=None and any([i.lower() in queries for i in no_punct.split()]):
+					if no_punct!=None:
 						#print no_punct
 						val = sum([afinn[i] if i in afinn else 0 for i in no_punct.split()])
 						if val<-2 or val>2:
